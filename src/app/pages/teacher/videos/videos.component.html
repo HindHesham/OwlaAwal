@@ -1,0 +1,115 @@
+<div class="row mt-5" *ngIf="page === 'list'" >
+  <div class="col-md-12">
+      <div class="card card-cascade narrower mt-5 videoDiv">
+        <div class="videoInfo">
+            <video class="col-md-5 test" controls>
+                <source src="https://www.youtube.com/embed/tgbNymZ7vqY" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p> 
+              اللغه العربيه: الدرس الاول
+              <br>
+              استاذ: محمد
+            </p>
+           
+        </div>
+        <div>
+            <video class="col-md-5 test"  controls>
+                <source src="https://www.youtube.com/embed/tgbNymZ7vqY" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p> 
+              اللغه العربيه: الدرس الاول
+              <br>
+              استاذ: محمد
+            </p>
+        </div>
+        <div>
+          <video class="col-md-5 test"  controls>
+            <source src="https://www.youtube.com/embed/tgbNymZ7vqY" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+          <p> 
+            اللغه العربيه: الدرس الاول
+            <br>
+            استاذ: محمد
+          </p>
+        </div>     
+        <!-- <div class="col-md-5 test">
+
+        </div> -->
+      </div>
+  </div>
+</div>
+
+<div *ngIf=" page === 'add'">
+  <section fxLayout="row wrap" fxLayoutAlign="center center" class="c">
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+      <mat-card-content>
+          <form enctype="multipart/form-data" [formGroup]="addVideoForm" (ngSubmit) = "onSubmit(addVideoForm.value)" fxLayout="column wrap"
+          fxLayoutAlign="center center" fxLayoutGap="10px">
+            <h1>Add Video</h1>
+          
+
+            <table class="fullwidth" cellspacing="2">
+            
+              <tr>
+                  <td>
+                      <mat-form-field>
+                          <input matInput  type="text" placeholder="الصف" formControlName="class">
+                          <mat-error *ngIf="hasError('class', 'required')" >class is required</mat-error>
+  
+                      </mat-form-field>
+                  </td>
+                  <td>
+                      <mat-form-field>
+                          <input matInput placeholder="الماده" formControlName="subject">
+                          <mat-error *ngIf="hasError('subject', 'required')" >subject is required</mat-error>
+  
+                      </mat-form-field>
+                  </td>
+              </tr>
+            </table>
+
+            <table class="fullwidth" cellspacing="2">
+            
+                  <tr>
+                      <td>
+                          <mat-form-field>
+                              <input matInput  type="text" placeholder="الوحده" formControlName="unit">
+                              <mat-error *ngIf="hasError('unit', 'required')" >unit is required</mat-error>
+      
+                          </mat-form-field>
+                      </td>
+                      <td>
+                          <mat-form-field>
+                              <input matInput placeholder="الدرس" formControlName="lesson">
+                              <mat-error *ngIf="hasError('lesson', 'required')" >lesson is required</mat-error>
+      
+                          </mat-form-field>
+                      </td>
+                  </tr>
+            </table>
+
+            <table>
+                <tr>
+                  <td>
+                    <div id="uploadVideo">
+                        <!-- <label for="exampleInputFile" > Profile Photo</label> -->
+                        <input formControlName="video" id="video" type="file" (change)="onSelectFile($event)"/>
+                    </div>
+                  </td>
+                
+                </tr>
+            </table>
+        
+            <!-- <div>
+              <p id="errorMsg" >{{errorMsg}}</p>
+            </div> -->
+
+            <button id="addVideoBtn" type="submit" [disabled]="!addVideoForm.valid " mat-flat-button color="primary">Add</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

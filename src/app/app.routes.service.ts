@@ -7,6 +7,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ListTeacherComponent } from './pages/teacher/list-teacher/list-teacher.component';
 import { AddTeacherComponent } from './pages/teacher/add-teacher/add-teacher.component';
+import { VideosComponent } from './pages/teacher/videos/videos.component';
+import { ListStudentsComponent } from './pages/students/list-students/list-students.component';
 
 const routes: Route[] = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -15,9 +17,14 @@ const routes: Route[] = [
   { path: 'teachers', children:
     [
       { path: 'allTeachers', component: ListTeacherComponent},
-      { path: 'addTeachers', component: AddTeacherComponent}
-      // { path: 'student', component: StudentDetailsComponent}
+      { path: 'addTeachers', component: AddTeacherComponent},
+      { path: 'listVideos', component: VideosComponent}
+    ]
+  },
 
+  { path: 'students', children:
+    [
+      { path: 'allStudents', component: ListStudentsComponent}
     ]
   },
   { path: 'signUp', component: SignupComponent},

@@ -16,26 +16,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import { MatButtonModule,      
-  MatMenuModule,
-  MatCheckboxModule, 
-  MatToolbarModule,      
-  MatIconModule,      
-  MatCardModule,      
-  MatFormFieldModule,      
-  MatInputModule,           
-  MatNativeDateModule,      
-  MatRadioModule,      
-  MatSelectModule,      
-  MatOptionModule,
- } from '@angular/material';
 
 import { LoginComponent } from './pages/login/login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,    
+    LoginComponent,
+  ],
+  entryComponents: [
   ],
   imports: [
     RouterModule.forRoot([
@@ -52,19 +42,6 @@ import { LoginComponent } from './pages/login/login.component';
     BrowserAnimationsModule,
     MaterialModule, 
     FlexLayoutModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatButtonModule,      
-    MatMenuModule,
-    MatCheckboxModule, 
-    MatToolbarModule,      
-    MatIconModule,      
-    MatCardModule,
-    MatNativeDateModule,      
-    MatRadioModule,         
-    MatOptionModule,      
-     
   ],
   providers: [ LoginService, SignupService, AddTeacherService],
   bootstrap: [AppComponent],

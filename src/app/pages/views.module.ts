@@ -25,6 +25,9 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ListTeacherComponent } from './teacher/list-teacher/list-teacher.component';
 import { AddTeacherComponent } from './teacher/add-teacher/add-teacher.component';
+import { VideosComponent } from './teacher/videos/videos.component';
+import { ListStudentsComponent } from './students/list-students/list-students.component';
+
 
 @NgModule({
   imports: [
@@ -52,6 +55,9 @@ import { AddTeacherComponent } from './teacher/add-teacher/add-teacher.component
     DashboardComponent,
     ListTeacherComponent,
     AddTeacherComponent,
+    VideosComponent,
+    ListStudentsComponent
+    
   ],
   exports: [
   

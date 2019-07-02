@@ -6,6 +6,7 @@ export class AddTeacherService {
 
   constructor(private http: HttpClient) { }
   configUrl = 'http://localhost:3000/users/signUp';
+  listUsersUrl = 'http://localhost:3000/users/'
   profileUrl = 'http://localhost:3000/profilePhoto';
 
   dataObj = {};
@@ -26,5 +27,12 @@ export class AddTeacherService {
     }
     console.log("data", this.dataObj);
     return this.http.post(this.configUrl, this.dataObj);
+    }
+
+    ListUsers(){
+      this.dataObj = {
+        "role" : "teacher"
+      }
+      return this.http.get(this.listUsersUrl, this.dataObj);
     }
 }
