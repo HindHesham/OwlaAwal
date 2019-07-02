@@ -49,8 +49,9 @@ export class AddTeacherService {
         "subject": data.subject,
         "lesson": data.lesson,
         "unit": data.unit,
-        "video": videoUrl
+        "videoUrl": videoUrl.data
       }
+      console.log("obj", this.dataObj)
 
       return this.http.post(this.addVideoUrl, this.dataObj);
 
