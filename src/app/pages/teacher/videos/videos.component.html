@@ -96,16 +96,16 @@
                   <td>
                     <div id="uploadVideo">
                         <!-- <label for="exampleInputFile" > Profile Photo</label> -->
-                        <input formControlName="video" id="video" type="file" (change)="onSelectFile($event)"/>
+                        <input formControlName="video" id="video" type="file"/>
                     </div>
                   </td>
                 
                 </tr>
             </table>
         
-            <!-- <div>
+            <div>
               <p id="errorMsg" >{{errorMsg}}</p>
-            </div> -->
+            </div>
 
             <button id="addVideoBtn" type="submit" [disabled]="!addVideoForm.valid " mat-flat-button color="primary">Add</button>
         </form>
